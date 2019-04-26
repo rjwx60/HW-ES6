@@ -1,0 +1,14 @@
+{
+  "name": "promise",
+  "version": "1.0.0",
+  "description": "hand write promise",
+  "main": "index.js",
+  "scripts": {
+    "test": "promises-aplus-tests ./index2.js"
+  },
+  "author": "rjwx60",
+  "license": "MIT",
+  "dependencies": {
+    "promises-aplus-tests": "^2.1.2"
+  }
+}
