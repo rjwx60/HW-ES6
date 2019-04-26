@@ -134,6 +134,8 @@ function resolvePromise(promise2, x, resolve, reject){
 }
 
 
+
+
 // resolve方法
 APromise.resolve = function(val){
   return new APromise((resolve,reject)=>{
@@ -185,4 +187,7 @@ APromise.deferred = function() {
 };
 
 module.exports = APromise;
+
+
+
 
