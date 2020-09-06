@@ -175,7 +175,18 @@ APromise.all = function(promises){
     };
   });
 }
-
+// finally方法
+APromise.finally = function(callback) {
+  callback = typeof callback === 'function' ? callback : function() {};
+  // 获取当前实例构造函数的引用
+  var P = this.constructor;  
+  return this.then(
+    // 接受状态：返回数据
+    value  => P.resolve(callback()).then(() => value),
+    // 拒绝状态：抛出错误
+    reason => P.resolve(callback()).then(() => { throw reason })
+  );
+}
 
 APromise.deferred = function() {
   let defer = {};
@@ -187,7 +198,5 @@ APromise.deferred = function() {
 };
 
 module.exports = APromise;
-
-
 
 
